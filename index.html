@@ -1,0 +1,69 @@
+<html>
+<body onkeydown="lockunlock(event)">
+<style>
+body {
+transition-duration: 0.2s;
+}
+</style>
+<div style="background-color: lime; position: absolute; top: 10%; left: 20%; height: 100px; width: 100px;" id="a"></div>
+<div style="background-color: lime; position: absolute; top: 10%; left: 70%; height: 100px; width: 100px;" id="b"></div>
+<div style="background-color: lime; position: absolute; top: 50%; left: 20%; height: 100px; width: 100px;" id="c"></div>
+<div style="background-color: lime; position: absolute; top: 50%; left: 70%; height: 100px; width: 100px;" id="d"></div>
+<div style="background-color: lime; position: absolute; top: 25%; left: 41%; height: 200px; width: 200px;" id="e"></div>
+
+<input type="checkbox" id="aa" checked hidden><input type="checkbox" id="bb" hidden checked><input type="checkbox" id="cc" hidden checked><input type="checkbox" id="dd" hidden checked><input type="checkbox" id="ee" hidden checked>
+<script>
+function lockunlock(e) {
+if(e.key == "f") {
+document.getElementById("aa").click();
+}
+if(e.key == "j") {
+document.getElementById("bb").click();
+}
+if(e.key == "g") {
+document.getElementById("cc").click();
+}
+if(e.key == "h") {
+document.getElementById("dd").click();
+}
+
+
+if(document.getElementById("aa").checked == true) {
+document.getElementById("a").style.backgroundColor = "lime";
+}
+if(document.getElementById("bb").checked == true) {
+document.getElementById("b").style.backgroundColor = "lime";
+}
+if(document.getElementById("aa").checked == false) {
+document.getElementById("a").style.backgroundColor = "red";
+}
+if(document.getElementById("bb").checked == false) {
+document.getElementById("b").style.backgroundColor = "red";
+}
+if(document.getElementById("cc").checked == true) {
+document.getElementById("c").style.backgroundColor = "lime";
+}
+if(document.getElementById("dd").checked == true) {
+document.getElementById("d").style.backgroundColor = "lime";
+}
+if(document.getElementById("cc").checked == false) {
+document.getElementById("c").style.backgroundColor = "red";
+}
+if(document.getElementById("dd").checked == false) {
+document.getElementById("d").style.backgroundColor = "red";
+}
+var disabled = "0";
+if(document.getElementById("aa").checked == false && document.getElementById("bb").checked == false && document.getElementById("cc").checked == false && document.getElementById("dd").checked == false ) {
+setTimeout(function() {document.getElementById("e").style.backgroundColor = "red";}, 400);
+setTimeout(function() {document.body.style.backgroundColor = "grey";}, 800);
+}
+else {
+if(document.getElementById("aa").checked == true && document.getElementById("bb").checked == true && document.getElementById("cc").checked == true && document.getElementById("dd").checked == true ) {
+setTimeout(function() {document.getElementById("e").style.backgroundColor = "lime";}, 400);
+setTimeout(function() {document.body.style.backgroundColor = "white";}, 800);
+}
+}
+}
+</script>
+</body>
+</html>
